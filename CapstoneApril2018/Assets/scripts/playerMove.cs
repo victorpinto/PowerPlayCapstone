@@ -29,7 +29,7 @@ public class playerMove : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && handOccupied)
         {
-            BS.throwBall();
+            BS.throwBall(transform.forward);
             handOccupied = false;
         }
 

@@ -19,7 +19,7 @@ public class BatteryScript : MonoBehaviour
     private gameManager GM;
     private float maxEnergy = 100;
     private Transform playHand;
-    private BasicPlayerController player;
+    private PlayerScript player;
 
     // Use this for initialization
     void Start ()
@@ -50,7 +50,7 @@ public class BatteryScript : MonoBehaviour
     {
         if (c.gameObject.tag == "Player" && energy == 100)
         {
-            player = FindObjectOfType<BasicPlayerController>();
+            player = FindObjectOfType<PlayerScript>();
             playHand = player.HandReturn();
             if (!player.getHand())
             {

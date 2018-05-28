@@ -9,6 +9,7 @@ public class BasicPlayerController : MonoBehaviour {
     [SerializeField] private float backwardSpeed = 2.0f;
     [SerializeField] private float sideSpeed = 3.5f;
     [SerializeField] private float sprintMultiplier = 5.0f;
+    [SerializeField] private float RotationSpeed = 80.0f;
     // Jump Force
     [SerializeField] private float jumpForce = 10.0f;
     // GetComponants
@@ -28,8 +29,8 @@ public class BasicPlayerController : MonoBehaviour {
     // <Controller Inputs>
     private float xAxis = 0.0f;
     private float yAxis = 0.0f;
-    private float FourthAxis;
-    private float FifthAxis;
+    private float FourthAxis = 0.0f;
+    private float FifthAxis = 0.0f;
     private float ButtonA;
     private float RightTrigger;
     // </Controller Inputs>
@@ -75,13 +76,18 @@ public class BasicPlayerController : MonoBehaviour {
     {
         xAxis = Input.GetAxis("X " + PlayerNum + " Horizontal");
         yAxis = Input.GetAxis("X " + PlayerNum + " Vertical");
+        FourthAxis = Input.GetAxis("X " + PlayerNum + " 4th");
+        FifthAxis = Input.GetAxis("X " + PlayerNum + " 5th");
         if (Mathf.Abs(xAxis) < 0.2f)
             xAxis = 0;
         if (Mathf.Abs(yAxis) < 0.2f)
             yAxis = 0;
-        Debug.Log("X Axis: " + xAxis + "Y Axis: " + yAxis);
+        Debug.Log("4th Axis: " + FourthAxis + "Y Axis: " + FifthAxis);
         onGround = Physics.Raycast(GroundCheck.position, Vector3.down, 0.1f);
-
+        // Rotate
+        Trans.Rotate(0, FourthAxis * RotationSpeed * Time.deltaTime, 0);
+        FourthAxis = 0;
+        FifthAxis = 0;
         // Forwards and Backwards
         if ((Input.GetKey(Forwards) && !Input.GetKey(Backwards)) || yAxis > 0.0f)
         {
@@ -170,6 +176,7 @@ public class BasicPlayerController : MonoBehaviour {
             MovingLR = false;
         }
 
+
         // Jumping
         jumpTime += Time.fixedDeltaTime;
         if (onGround && jumpTime >= 0.3f)
@@ -218,7 +225,7 @@ public class BasicPlayerController : MonoBehaviour {
         // Fire Ball
         if ((Input.GetKeyDown(Fire) || Input.GetButton("X " + PlayerNum + " B")) && handOccupied)
         {
-            BS.throwBall();
+            BS.throwBall(Trans.forward);
             handOccupied = false;
         }
     }
