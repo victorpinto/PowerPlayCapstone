@@ -5,9 +5,10 @@ using UnityEngine;
 public class ballScript : MonoBehaviour {
     
     private Transform playHand;
-    private BasicPlayerController player;
+    private PlayerScript player;
     Rigidbody RB;
     private bool usingGravity = true;
+    
     // Use this for initialization
     void Start ()
     {
@@ -23,7 +24,7 @@ public class ballScript : MonoBehaviour {
     {
         if(c.gameObject.tag == "Player")
         {
-            player = FindObjectOfType<BasicPlayerController>();
+            player = FindObjectOfType<PlayerScript>();
             playHand = player.HandReturn();
             if (!player.getHand())
             {
@@ -38,13 +39,13 @@ public class ballScript : MonoBehaviour {
         }
     }
 
-    public void throwBall()
+    public void throwBall(Vector3 direction)
     {
         toggleRB();
         this.transform.parent = null;
         
-        RB.AddForce(transform.forward * 500);
-        RB.AddForce(transform.up * 3);
+        RB.AddForce(direction * 500);
+        RB.AddForce(transform.up * 50);
     }
 
     public void toggleRB()
