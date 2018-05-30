@@ -19,17 +19,18 @@ public class Checker : MonoBehaviour {
     [SerializeField]
     List <CinemachineTargetGroup.Target> targets = new List<CinemachineTargetGroup.Target>();
    
-    GameObject[] playerObjects;
+    private GameObject[] playerObjects;
 
-
+    [SerializeField]
+    private GameObject virtualCam;
 
     // Use this for initialization
     void Start () {
 
+        // set angle of camera
+        virtualCam.transform.eulerAngles = new Vector3(40, 0, 0);
 
-
-
-        
+        // find all objects with Player as the tag, and place them in a list
          playerObjects = GameObject.FindGameObjectsWithTag("Player");
          foreach(GameObject gamePlayers in playerObjects)
          {
@@ -48,11 +49,12 @@ public class Checker : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+        // if battery doesn't exist check for battery until battery exists
         if (!battery.target)
         {
-            Debug.Log("enterd1");
+            //Debug.Log("enterd1");
 
+            // if battery is found place it in group list
             if (GameObject.FindGameObjectWithTag("Battery") == true)
             {
                 Debug.Log("enterd2");
@@ -70,7 +72,7 @@ public class Checker : MonoBehaviour {
 
        // Debug.Log("Targets . count = " + targets.Count);
         
-
+        // resize list depending if the there's a spot inn list that is void 
         for (int i = 0; i < targets.Count; i++)
         {
             if (targets[i].target == null)
