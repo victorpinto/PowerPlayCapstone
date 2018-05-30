@@ -13,6 +13,7 @@ TagManager:
   - yellowBall
   - redBall
   - Battery
+  - doorPad
   layers:
   - Default
   - TransparentFX
