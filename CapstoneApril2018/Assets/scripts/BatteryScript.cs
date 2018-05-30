@@ -9,12 +9,14 @@ public class BatteryScript : MonoBehaviour
     private float energy;
     [SerializeField]
     private GameObject battery;
-    [SerializeField]
-    private GameObject blueSlot;
-    [SerializeField]
-    private GameObject redSlot;
+    //[SerializeField]
+    //private GameObject blueSlot;
+    //[SerializeField]
+    //private GameObject redSlot;
     [SerializeField]
     private GameObject yellowSlot;
+    [SerializeField]
+    private GameObject doorPad;
     [SerializeField]
     private gameManager GM;
     private float maxEnergy = 100;
@@ -31,9 +33,10 @@ public class BatteryScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        blueSlot = GameObject.FindGameObjectWithTag("blueSlot");
-        redSlot = GameObject.FindGameObjectWithTag("redSlot");
+        //blueSlot = GameObject.FindGameObjectWithTag("blueSlot");
+        //redSlot = GameObject.FindGameObjectWithTag("redSlot");
         yellowSlot = GameObject.FindGameObjectWithTag("yellowSlot");
+        doorPad = GameObject.FindGameObjectWithTag("doorPad");
         GM = FindObjectOfType<gameManager>();
         if (energy <= -1)
         {
@@ -57,45 +60,62 @@ public class BatteryScript : MonoBehaviour
                 batteryGrab();
             }
         }
-        if (c.gameObject.tag == "blueSlot")
-        {
+        //if (c.gameObject.tag == "blueSlot")
+        //{
 
-            placeBattBlue();
+        //    placeBattBlue();
 
-        }
-        if (c.gameObject.tag == "redSlot")
-        {
+        //}
+        //if (c.gameObject.tag == "redSlot")
+        //{
 
-            placeBattRed();
+        //    placeBattRed();
 
-        }
+        //}
         if (c.gameObject.tag == "yellowSlot")
         {
 
             placeBattYellow();
 
         }
+        if (c.gameObject.tag == "doorPad")
+        {
+
+            placeBatt2();
+
+        }
     }
     private void OnTriggerStay(Collider c)
     {
-        if (c.gameObject.tag == "blueSlot")
-        {
-            GM.openBlue();
-            energydrain();
+        //if (c.gameObject.tag == "blueSlot")
+        //{
+        //    GM.openBlue();
+        //    energydrain();
 
-        }
+        //}
         if (c.gameObject.tag == "yellowSlot")
         {
+            GM.openRed();
+            GM.openBlue();
             GM.openYellow();
             energydrain();
 
         }
-        if (c.gameObject.tag == "redSlot")
+
+        if (c.gameObject.tag == "doorPad")
         {
-            GM.openRed();
+            GM.openRed2();
+            GM.openBlue2();
+            GM.openYellow2();
             energydrain();
 
         }
+        //if (c.gameObject.tag == "redSlot")
+        //{
+        //    GM.openRed();
+        //    energydrain();
+
+        //}
         if (c.gameObject.tag == "chargePad")
         {
             
@@ -119,22 +139,29 @@ public class BatteryScript : MonoBehaviour
     {
         energy += 0.1f;
     }
-    public void placeBattBlue()
-    {
+    //public void placeBattBlue()
+    //{
         
-        GM.BATT.transform.parent = blueSlot.transform;
-        GM.BATT.transform.localPosition = new Vector3(0, 0, 0);
-    }
+    //    GM.BATT.transform.parent = blueSlot.transform;
+    //    GM.BATT.transform.localPosition = new Vector3(0, 0, 0);
+    //}
     public void placeBattYellow()
     {
 
         GM.BATT.transform.parent = yellowSlot.transform;
         GM.BATT.transform.localPosition = new Vector3(0, 0, 0);
     }
-    public void placeBattRed()
+
+    public void placeBatt2()
     {
 
-        GM.BATT.transform.parent = redSlot.transform;
+        GM.BATT.transform.parent = doorPad.transform;
         GM.BATT.transform.localPosition = new Vector3(0, 0, 0);
     }
+    //public void placeBattRed()
+    //{
+
+    //    GM.BATT.transform.parent = redSlot.transform;
+    //    GM.BATT.transform.localPosition = new Vector3(0, 0, 0);
+    //}
 }

@@ -11,6 +11,8 @@ public class gameManager : MonoBehaviour
     public GameObject BATT;
     [SerializeField]
     private BatteryScript BS;
+
+    //team#1 goal
     [SerializeField]
     private GameObject blueDoor;
     [SerializeField]
@@ -29,6 +31,26 @@ public class gameManager : MonoBehaviour
     private Transform yellowStartMarker;
     [SerializeField]
     private Transform yellowEndMarker;
+    //team#2 goal
+    [SerializeField]
+    private GameObject blueDoor2;
+    [SerializeField]
+    private GameObject redDoor2;
+    [SerializeField]
+    private GameObject yellowDoor2;
+    [SerializeField]
+    private Transform blueStartMarker2;
+    [SerializeField]
+    private Transform blueEndMarker2;
+    [SerializeField]
+    private Transform redStartMarker2;
+    [SerializeField]
+    private Transform redEndMarker2;
+    [SerializeField]
+    private Transform yellowStartMarker2;
+    [SerializeField]
+    private Transform yellowEndMarker2;
+
     [SerializeField]
     private float doorSpeed = 0.01f;
 
@@ -41,6 +63,12 @@ public class gameManager : MonoBehaviour
     private Transform spawn2;
     [SerializeField]
     private Transform spawn3;
+    [SerializeField]
+    private Transform spawn4;
+    [SerializeField]
+    private Transform spawn5;
+    [SerializeField]
+    private Transform spawn6;
     private int itemInt;
 
     // Use this for initialization
@@ -81,11 +109,40 @@ public class gameManager : MonoBehaviour
             redDoor.transform.position = redEndMarker.transform.position;
         }
     }
+
+    public void openBlue2()
+    {
+        blueDoor2.transform.position = Vector3.Lerp(blueDoor2.transform.position, blueEndMarker2.position, doorSpeed);
+        if (blueDoor2.transform.position.y >= blueEndMarker2.transform.position.y)
+        {
+            blueDoor2.transform.position = blueEndMarker2.transform.position;
+        }
+    }
+    public void openYellow2()
+    {
+        yellowDoor2.transform.position = Vector3.Lerp(yellowDoor2.transform.position, yellowEndMarker2.position, doorSpeed);
+        if (yellowDoor2.transform.position.y >= yellowEndMarker2.transform.position.y)
+        {
+            yellowDoor2.transform.position = yellowEndMarker2.transform.position;
+        }
+    }
+    public void openRed2()
+    {
+        redDoor2.transform.position = Vector3.Lerp(redDoor2.transform.position, redEndMarker2.position, doorSpeed);
+        if (redDoor2.transform.position.y >= redEndMarker2.transform.position.y)
+        {
+            redDoor2.transform.position = redEndMarker2.transform.position;
+        }
+    }
     public void closeDoors()
     {
             blueDoor.transform.position = blueStartMarker.transform.position;
             yellowDoor.transform.position = yellowStartMarker.transform.position;
             redDoor.transform.position = redStartMarker.transform.position;
+
+        blueDoor2.transform.position = blueStartMarker2.transform.position;
+        yellowDoor2.transform.position = yellowStartMarker2.transform.position;
+        redDoor2.transform.position = redStartMarker2.transform.position;
     }
 
     void spawnItems()
@@ -94,7 +151,10 @@ public class gameManager : MonoBehaviour
         Instantiate(balls[RandomInt()], spawn1.position, spawn1.rotation);
         Instantiate(balls[RandomInt()], spawn2.position, spawn2.rotation);
         Instantiate(balls[RandomInt()], spawn3.position, spawn3.rotation);
-       
+        Instantiate(balls[RandomInt()], spawn4.position, spawn1.rotation);
+        Instantiate(balls[RandomInt()], spawn5.position, spawn2.rotation);
+        Instantiate(balls[RandomInt()], spawn6.position, spawn3.rotation);
+
     }
     private int RandomInt()
     {

@@ -156,6 +156,10 @@ Prefab:
       propertyPath: m_Name
       value: Character (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1567490067917614, guid: 28aa5bb40c5a2a14c9c09ea8ec05c13e, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28aa5bb40c5a2a14c9c09ea8ec05c13e, type: 2}
   m_IsPrefabParent: 0
@@ -206,6 +210,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567490067917614, guid: 28aa5bb40c5a2a14c9c09ea8ec05c13e, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28aa5bb40c5a2a14c9c09ea8ec05c13e, type: 2}
@@ -271,7 +279,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4850514076211488, guid: 993d156798c1da043a1db6f27524d51f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.390005
+      value: 0.3900051
       objectReference: {fileID: 0}
     - target: {fileID: 4850514076211488, guid: 993d156798c1da043a1db6f27524d51f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -349,6 +357,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567490067917614, guid: 28aa5bb40c5a2a14c9c09ea8ec05c13e, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28aa5bb40c5a2a14c9c09ea8ec05c13e, type: 2}
@@ -500,7 +512,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1773103923}
   m_LocalRotation: {x: 0.3336004, y: 0.63153386, z: -0.3464154, w: 0.60817116}
-  m_LocalPosition: {x: -1.2835464, y: 4.570896, z: -0.90064466}
+  m_LocalPosition: {x: -1.2835464, y: 4.570896, z: -0.90064454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -669,6 +681,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1567490067917614, guid: 28aa5bb40c5a2a14c9c09ea8ec05c13e, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28aa5bb40c5a2a14c9c09ea8ec05c13e, type: 2}
   m_IsPrefabParent: 0
@@ -712,15 +728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344bafabeec9b1746bd7e5fb947e6cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
-  furthestPlayer: {fileID: 0}
-  furthest: {fileID: 0}
-  longestDistance: 0
-  vcam: {fileID: 1755494051}
-  camZoom: {fileID: 1755494053}
-  currentTargetDistance: 0
-  target: {fileID: 2016193985}
-  finderTransform: {fileID: 0}
 --- !u!1 &2086815660
 GameObject:
   m_ObjectHideFlags: 0
