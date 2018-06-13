@@ -324,7 +324,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 Vertical
     descriptiveName: Xbox 1 Vertical
@@ -340,7 +340,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 4th
     descriptiveName: Xbox 1 HorizontalRight
@@ -356,7 +356,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 3
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 5th
     descriptiveName: Xbox 1 VerticalRight
@@ -372,7 +372,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 4
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 Triggers
     descriptiveName: Xbox 1 Triggers
@@ -388,7 +388,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 2
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 A
     descriptiveName: Xbox 1 A Button
@@ -404,7 +404,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 27
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 B
     descriptiveName: Xbox 1 B Button
@@ -420,7 +420,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 27
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 Y
     descriptiveName: Xbox 1 Y Button
@@ -436,7 +436,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 27
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 X
     descriptiveName: Xbox 1 X Button
@@ -452,7 +452,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 27
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 DPadHorizontal
     descriptiveName: Xbox 1 DPadH
@@ -468,7 +468,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 5
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 DPadVertical
     descriptiveName: Xbox 1 DpadV
@@ -484,7 +484,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 6
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 Start
     descriptiveName: Xbox 1 Start Button
@@ -500,7 +500,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 27
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 Select
     descriptiveName: Xbox 1 Select Button
@@ -516,7 +516,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 27
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 Right
     descriptiveName: Xbox 1 Right Joystick Down
@@ -532,7 +532,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 27
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 Left
     descriptiveName: Xbox 1 Left Joystick Down
@@ -548,7 +548,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 27
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 LeftBumper
     descriptiveName: Xbox 1 Left Bumper
@@ -564,7 +564,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 27
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: X 1 RightBumper
     descriptiveName: Xbox 1 Right Bumper
@@ -580,7 +580,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 27
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: '------------------'
     descriptiveName: Xbox 1 Left Bumper
