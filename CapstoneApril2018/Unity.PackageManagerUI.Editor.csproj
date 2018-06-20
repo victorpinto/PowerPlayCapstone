@@ -288,6 +288,9 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>D:/Unity2018.1.0f2/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="UltimateReplay">
+      <HintPath>Assets/UltimateReplay/Plugin/UltimateReplay.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Owner/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -437,6 +440,31 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+    <None Include="Assets\UltimateReplay\Demo\Audio\MediumExplosion.info.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\build_system.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\errno.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\ffmpeg.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\filter_design.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\issue_tracker.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\libav-merge.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\mips.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\multithreading.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\optimization.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\rate_distortion.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\snow.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\swresample.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\swscale.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\tablegen.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\undefined.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\FF\ffmpeg-4.0\doc\writing_filters.txt" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\RockVR\Video\Shaders\CopyReverse.shader" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\RockVR\Video\Shaders\Cubemap2Equirectangular.shader" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\RockVR\Video\Shaders\Cubemap2EquirectangularPro.shader" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\RockVR\Video\Shaders\CubemapDisplayPro.shader" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\RockVR\Video\Shaders\CubemapToCylindrical.shader" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\RockVR\Video\Shaders\DownsamplePro.shader" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\RockVR\Video\Shaders\FlippingTexture.shader" />
+    <None Include="Assets\VideoCapture(lack ffmpeg)\RockVR\Video\Shaders\Stereoscopic.shader" />
     <None Include="C:\Users\Owner\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="C:\Users\Owner\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="C:\Users\Owner\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\Alert.uxml" />
