@@ -20,6 +20,10 @@ public class TopDownPlayerScript : MonoBehaviour {
     [SerializeField] private GameObject Model;
     // Controls
     [SerializeField] private int PlayerNum = 1;
+    [SerializeField] private float BoardAcceleration = 5.0f;
+    [SerializeField] private float MaxSpeed = 10;
+
+    private float MidSpeed;
     private float xAxis = 0.0f;
     private float yAxis = 0.0f;
     private float FourthAxis = 0.0f;
@@ -34,6 +38,7 @@ public class TopDownPlayerScript : MonoBehaviour {
     private bool canJump = true;
     private bool MovingFB = false;
     private bool MovingLR = false;
+    private bool Stunned = false;
     // Transform
     private Transform Trans;
     // Jumping
@@ -45,8 +50,18 @@ public class TopDownPlayerScript : MonoBehaviour {
     private ballScript BS;
     // Direction
     private Vector3 direction;
+    // Velocity and Acceleration
+    private Vector3 Velocity;
+    private Vector3 Acceleration;
+    private float AngularVelocity;
+    private float AngularAcceleration;
+
+
     // Use this for initialization
     void Start () {
+        Velocity = new Vector3(0, 0, 0);
+        Acceleration = new Vector3(0, 0, 0);
+        MidSpeed = MaxSpeed / 2;
         // Error Check
         if (!Animate)
             Debug.LogWarning("Character Will have No Animations");
@@ -82,9 +97,11 @@ public class TopDownPlayerScript : MonoBehaviour {
         // Controller Inputs
         xAxis = Input.GetAxis("X " + PlayerNum + " Horizontal");
         yAxis = Input.GetAxis("X " + PlayerNum + " Vertical");
+        //Debug.Log("Left Joystick (X: " + xAxis + ", Y: " + yAxis + ")");
+
         FourthAxis = Input.GetAxis("X " + PlayerNum + " 4th");
         FifthAxis = Input.GetAxis("X " + PlayerNum + " 5th");
-        Debug.Log("Fourth Axis: " + FourthAxis + "Fifth Axis: " + FifthAxis);
+        //Debug.Log("Right Joystick (X: " + FourthAxis + ", Y: " + FifthAxis + ")");
         if (Mathf.Abs(xAxis) < 0.2f)
             xAxis = 0;
         if (Mathf.Abs(yAxis) < 0.2f)
@@ -95,9 +112,12 @@ public class TopDownPlayerScript : MonoBehaviour {
             FifthAxis = 0;
 
         // Direction and Movement
-        direction = new Vector3(xAxis, yAxis).normalized;
-        if (direction.magnitude == 0)
-            direction = new Vector3(FourthAxis, FifthAxis).normalized;
+        if (xAxis + yAxis + FourthAxis + FifthAxis != 0f)
+        {
+            direction = new Vector3(xAxis, yAxis).normalized;
+            if (direction.magnitude == 0)
+                direction = new Vector3(FourthAxis, FifthAxis).normalized;
+        }
 
         if (direction.magnitude != 0 && (xAxis != 0 || yAxis != 0))
         {
@@ -118,21 +138,28 @@ public class TopDownPlayerScript : MonoBehaviour {
                 Trans.Rotate(0.0f, -RotationSpeed * Time.deltaTime, 0.0f);
 
             // Move Character
-            if (!Sprinting)
+            if (!Stunned)
             {
-                MoveForwards(forwardSpeed, Time.deltaTime);
-                Animate.SetBool("Walking", true);
-                Animate.SetBool("Sprint", false);
-
-            }
-            else
-            {
-                MoveForwards(forwardSpeed * sprintMultiplier, Time.deltaTime);
-                Animate.SetBool("Walking", false);
-                Animate.SetBool("Sprint", true);
+                if (Velocity.x > MaxSpeed)
+                {
+                    Acceleration.x = -1f;
+                }
+                else if (Velocity.x == MaxSpeed)
+                {
+                    Acceleration.x = 0f;
+                }
+                else
+                {
+                    Acceleration.x = BoardAcceleration;
+                }
             }
             
+            Velocity += Acceleration * Time.deltaTime;
+            Trans.Translate(Velocity.x * Time.deltaTime, Velocity.y * Time.deltaTime, Velocity.y * Time.deltaTime);
+
+
             MovingFB = true;
+
         }
         else if (direction.magnitude != 0 && xAxis == 0 && yAxis == 0)
         {
@@ -152,13 +179,45 @@ public class TopDownPlayerScript : MonoBehaviour {
             else if ((AngleOfPlayer - AngleOfDirection) < -3.0f)
                 Trans.Rotate(0.0f, -RotationSpeed * Time.deltaTime, 0.0f);
 
+            if (!Stunned)
+            {
+                if (Velocity.x > 0f)
+                {
+                    Acceleration.x = -4f;
+                }
+                else if (Velocity.x < 0f)
+                {
+                    Acceleration.x = 0f;
+                }
+            }
+            Debug.LogWarning("Here");
+            Velocity += Acceleration * Time.deltaTime;
+            Trans.Translate(Velocity.x * Time.deltaTime, Velocity.y * Time.deltaTime, Velocity.y * Time.deltaTime);
+
             MovingFB = false;
+
         }
         else
         {
+            if (!Stunned)
+            {
+                if (Velocity.x > 0f)
+                {
+                    Acceleration.x = -4f;
+                }
+                else if (Velocity.x< 0f)
+                {
+                    Acceleration.x = 0f;
+                }
+            }
+            Debug.LogWarning("Here");
+            Velocity += Acceleration * Time.deltaTime;
+            Trans.Translate(Velocity.x * Time.deltaTime, Velocity.y * Time.deltaTime, Velocity.y * Time.deltaTime);
             MovingFB = false;
         }
-        
+
+        Debug.LogWarning("Velocity (" + Velocity + ")");
+        Debug.LogWarning("Acceleration (" + Acceleration + ")");
 
 
 
