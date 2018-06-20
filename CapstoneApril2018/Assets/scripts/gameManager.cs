@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class gameManager : MonoBehaviour
 {
    [SerializeField]
@@ -54,28 +55,12 @@ public class gameManager : MonoBehaviour
     [SerializeField]
     private float doorSpeed = 0.01f;
 
-    [SerializeField]
-    private GameObject[] balls;
-
-    [SerializeField]
-    private Transform spawn1;
-    [SerializeField]
-    private Transform spawn2;
-    [SerializeField]
-    private Transform spawn3;
-    [SerializeField]
-    private Transform spawn4;
-    [SerializeField]
-    private Transform spawn5;
-    [SerializeField]
-    private Transform spawn6;
-    private int itemInt;
-
+    
     // Use this for initialization
     void Awake ()
     {
         spawnBATT();
-        spawnItems();
+        
     }
 	
 	public void spawnBATT()
@@ -145,22 +130,6 @@ public class gameManager : MonoBehaviour
         redDoor2.transform.position = redStartMarker2.transform.position;
     }
 
-    void spawnItems()
-    {
-
-        Instantiate(balls[RandomInt()], spawn1.position, spawn1.rotation);
-        Instantiate(balls[RandomInt()], spawn2.position, spawn2.rotation);
-        Instantiate(balls[RandomInt()], spawn3.position, spawn3.rotation);
-        Instantiate(balls[RandomInt()], spawn4.position, spawn1.rotation);
-        Instantiate(balls[RandomInt()], spawn5.position, spawn2.rotation);
-        Instantiate(balls[RandomInt()], spawn6.position, spawn3.rotation);
-
-    }
-    private int RandomInt()
-    {
-        itemInt = Random.Range(0, balls.Length);
-        return itemInt;
-    }
-
+    
 
 }
