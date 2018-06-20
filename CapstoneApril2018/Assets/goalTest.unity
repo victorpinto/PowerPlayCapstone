@@ -113,6 +113,91 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &6565251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 6565254}
+  - component: {fileID: 6565253}
+  - component: {fileID: 6565252}
+  m_Layer: 0
+  m_Name: levelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &6565252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 6565251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 1
+  m_LocalPlayerAuthority: 0
+--- !u!114 &6565253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 6565251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8717979dc7b5d4ab19f1eaa9373aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balls:
+  - {fileID: 1156079087866132, guid: c5647a4cfc3aea6478b71d38779bfeaf, type: 2}
+  - {fileID: 1354323486708570, guid: fe7176c566da78a459e3ecac1f8ce46b, type: 2}
+  - {fileID: 1068524950771586, guid: 33c27bc02158b2b4eb9cdc969c59eb2a, type: 2}
+  spawns:
+  - {fileID: 1933002244}
+  - {fileID: 516085346}
+  - {fileID: 2134766467}
+  - {fileID: 1597391781}
+  - {fileID: 1749542094}
+  - {fileID: 28168499}
+  roundTime: 20
+--- !u!4 &6565254
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 6565251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 204.53336, y: -21.251293, z: 261.22302}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &17425139
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478260505}
   - component: {fileID: 478260504}
+  - component: {fileID: 478260506}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -804,16 +890,6 @@ MonoBehaviour:
   yellowStartMarker2: {fileID: 1440046044}
   yellowEndMarker2: {fileID: 332323411}
   doorSpeed: 0.01
-  balls:
-  - {fileID: 1156079087866132, guid: c5647a4cfc3aea6478b71d38779bfeaf, type: 2}
-  - {fileID: 1354323486708570, guid: fe7176c566da78a459e3ecac1f8ce46b, type: 2}
-  - {fileID: 1068524950771586, guid: 33c27bc02158b2b4eb9cdc969c59eb2a, type: 2}
-  spawn1: {fileID: 1933002244}
-  spawn2: {fileID: 516085346}
-  spawn3: {fileID: 2134766467}
-  spawn4: {fileID: 1597391781}
-  spawn5: {fileID: 1749542094}
-  spawn6: {fileID: 28168499}
 --- !u!4 &478260505
 Transform:
   m_ObjectHideFlags: 0
@@ -827,6 +903,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &478260506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 478260503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!1 &516085345
 GameObject:
   m_ObjectHideFlags: 0
